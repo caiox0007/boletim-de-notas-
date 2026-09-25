@@ -1,0 +1,189 @@
+/* ===== VARIÁVEIS DE COR (tema escuro tecnológico) ===== */
+:root {
+  --fundo: #0a0e1a;           /* fundo escuro principal */
+  --fundo-card: rgba(255, 255, 255, 0.05); /* vidro translúcido */
+  --azul-neon: #00d4ff;       /* cor principal */
+  --roxo-neon: #a855f7;       /* cor secundária */
+  --texto: #e6f1ff;           /* texto claro */
+  --texto-suave: #94a3b8;     /* texto de apoio */
+  --borda: rgba(0, 212, 255, 0.35);
+  --bom: #22c55e;             /* verde para bom desempenho */
+  --atencao: #f59e0b;         /* laranja para atenção */
+  --neutro: #94a3b8;          /* cinza para nota ausente */
+}
+
+/* ===== RESET BÁSICO ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Segoe UI", Arial, sans-serif;
+  background: radial-gradient(circle at top, #101a33 0%, var(--fundo) 60%);
+  color: var(--texto);
+  min-height: 100vh;
+  padding: 20px;
+}
+
+/* ===== CABEÇALHO ===== */
+.cabecalho {
+  text-align: center;
+  padding: 30px 10px 20px;
+}
+
+.cabecalho h1 {
+  font-size: 2.2rem;
+  color: var(--azul-neon);
+  text-shadow: 0 0 12px rgba(0, 212, 255, 0.6);
+  letter-spacing: 1px;
+}
+
+.subtitulo {
+  margin-top: 8px;
+  color: var(--roxo-neon);
+  font-size: 1rem;
+  text-shadow: 0 0 8px rgba(168, 85, 247, 0.5);
+}
+
+/* ===== CONTEÚDO PRINCIPAL ===== */
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===== CARDS DE RESUMO (glassmorphism) ===== */
+.cards-resumo {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  margin: 20px 0 40px;
+}
+
+.card {
+  background: var(--fundo-card);
+  border: 1px solid var(--borda);
+  border-radius: 16px;
+  padding: 18px;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0 4px 20px rgba(0, 212, 255, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 24px rgba(0, 212, 255, 0.25);
+}
+
+.card-titulo {
+  font-size: 0.85rem;
+  color: var(--texto-suave);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.card-valor {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: var(--azul-neon);
+}
+
+.card-detalhe {
+  font-size: 0.8rem;
+  color: var(--texto-suave);
+  margin-top: 6px;
+}
+
+/* ===== ÁREA DA TABELA ===== */
+.area-tabela h2 {
+  color: var(--azul-neon);
+  margin-bottom: 16px;
+  font-size: 1.4rem;
+}
+
+.tabela-wrapper {
+  overflow-x: auto; /* rolagem horizontal em telas pequenas */
+  border-radius: 16px;
+  border: 1px solid var(--borda);
+  background: var(--fundo-card);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.tabela-boletim {
+  width: 100%;
+  border-collapse: collapse;
+  min-width: 720px; /* garante leitura em telas pequenas com rolagem */
+}
+
+.tabela-boletim th,
+.tabela-boletim td {
+  padding: 12px 14px;
+  text-align: center;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  font-size: 0.9rem;
+}
+
+.tabela-boletim th {
+  background: rgba(0, 212, 255, 0.08);
+  color: var(--azul-neon);
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.5px;
+}
+
+.tabela-boletim td:first-child,
+.tabela-boletim th:first-child {
+  text-align: left;
+}
+
+.tabela-boletim tbody tr:hover {
+  background: rgba(168, 85, 247, 0.08);
+}
+
+/* ===== CORES DE SITUAÇÃO ===== */
+.situacao-bom {
+  color: var(--bom);
+  font-weight: 600;
+}
+
+.situacao-atencao {
+  color: var(--atencao);
+  font-weight: 600;
+}
+
+.situacao-neutro {
+  color: var(--neutro);
+  font-style: italic;
+}
+
+/* ===== RODAPÉ ===== */
+.rodape {
+  text-align: center;
+  margin-top: 40px;
+  padding: 20px;
+  color: var(--texto-suave);
+  font-size: 0.8rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+/* ===== AJUSTES PARA CELULAR ===== */
+@media (max-width: 600px) {
+  .cabecalho h1 {
+    font-size: 1.6rem;
+  }
+
+  .card-valor {
+    font-size: 1.4rem;
+  }
+
+  .tabela-boletim th,
+  .tabela-boletim td {
+    padding: 10px 8px;
+    font-size: 0.82rem;
+  }
+}
