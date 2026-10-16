@@ -14,7 +14,27 @@
     <p class="subtitulo">8º Ano — Estudante Exemplo</p>
   </header>
 
-  <main class="conteudo">
+  <!-- Área de acesso com PIN (adicionada para a nova etapa) -->
+  <section class="area-login" id="areaLogin">
+    <div class="login-card">
+      <h2 class="login-titulo">Acesso ao Boletim</h2>
+      <p class="login-info">Turma: <span id="loginTurma">8A</span></p>
+      <p class="login-info">Chamada: <span id="loginChamada">4</span></p>
+      <label class="login-label" for="campoPin">Digite seu PIN</label>
+      <input
+        type="password"
+        id="campoPin"
+        class="login-input"
+        placeholder="PIN"
+        inputmode="numeric"
+        autocomplete="off"
+      />
+      <button id="botaoEntrar" class="login-botao">Entrar</button>
+      <p id="mensagemLogin" class="login-mensagem"></p>
+    </div>
+  </section>
+
+  <main class="conteudo" id="conteudoBoletim" style="display: none;">
 
     <!-- Área dos cards de resumo (preenchidos pelo JS) -->
     <section class="cards-resumo" id="cardsResumo">
@@ -41,6 +61,20 @@
             <!-- As linhas serão criadas automaticamente pelo script.js -->
           </tbody>
         </table>
+      </div>
+    </section>
+
+    <!-- Área de edição (adicionada para a nova etapa) -->
+    <section class="area-edicao" id="areaEdicao" style="display: none;">
+      <button id="botaoAlterar" class="botao-edicao">Alterar dados</button>
+      <div id="painelEdicao" class="painel-edicao" style="display: none;">
+        <h3 class="edicao-titulo">Editar notas e faltas</h3>
+        <div id="listaEdicao" class="lista-edicao"></div>
+        <div class="edicao-acoes">
+          <button id="botaoSalvar" class="botao-salvar">Salvar alterações</button>
+          <button id="botaoCancelar" class="botao-cancelar">Cancelar</button>
+        </div>
+        <p id="mensagemEdicao" class="edicao-mensagem"></p>
       </div>
     </section>
 
