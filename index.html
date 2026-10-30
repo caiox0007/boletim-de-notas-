@@ -41,6 +41,33 @@
       <!-- Os cards serão criados automaticamente pelo script.js -->
     </section>
 
+    <!-- Área dos gráficos (adicionada nesta etapa) -->
+    <section class="area-graficos" id="areaGraficos">
+
+      <article class="grafico-card">
+        <h2 class="grafico-titulo">Média por disciplina</h2>
+        <div class="grafico-container grafico-container-alto">
+          <canvas id="graficoMediasDisciplinas"></canvas>
+        </div>
+      </article>
+
+      <article class="grafico-card">
+        <h2 class="grafico-titulo">Evolução da média geral</h2>
+        <div class="grafico-container">
+          <canvas id="graficoEvolucaoTrimestres"></canvas>
+        </div>
+      </article>
+
+      <article class="grafico-card" id="cardGraficoFaltas">
+        <h2 class="grafico-titulo">Faltas por trimestre</h2>
+        <div id="estadoFaltas" class="estado-faltas"></div>
+        <div class="grafico-container">
+          <canvas id="graficoFaltasTrimestres"></canvas>
+        </div>
+      </article>
+
+    </section>
+
     <!-- Tabela do boletim (preenchida pelo JS) -->
     <section class="area-tabela">
       <h2>Notas por Disciplina</h2>
@@ -84,6 +111,8 @@
     <p>Projeto escolar — dados fictícios para fins de estudo.</p>
   </footer>
 
+  <!-- Chart.js (adicionado nesta etapa, antes do script.js) -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
